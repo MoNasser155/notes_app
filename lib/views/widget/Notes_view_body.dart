@@ -1,7 +1,9 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:noteapp/views/widget/custom_appbar.dart';
 
-import 'custom_note_item.dart';
+import 'Notes_List_View.dart';
 
 class NotesViewBody extends StatelessWidget {
   const NotesViewBody({
@@ -18,7 +20,9 @@ class NotesViewBody extends StatelessWidget {
             child: CustomAppbar(),
           ),
         ),
-        NoteItem()
+        Expanded(
+          child: NoteListView(),
+        ),
       ],
     );
   }
