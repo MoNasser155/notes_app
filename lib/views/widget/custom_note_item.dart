@@ -40,7 +40,7 @@ class NoteItem extends StatelessWidget {
               subtitle: Padding(
                 padding: const EdgeInsets.only(bottom: 16),
                 child: Text(
-                  'flutter tips with mohammed nasser and this is my app to apply my learnings ',
+                  'flutter tips with mohammed nasser and this is my app  ',
                   style: TextStyle(
                     fontSize: 16,
                     color: Colors.black.withOpacity(0.5),
