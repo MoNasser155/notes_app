@@ -8,20 +8,33 @@ class AddNoteModalSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
+    return SingleChildScrollView(
       child: Column(
         children: [
-          CustomTextField(
+          Padding(
+            padding: const EdgeInsets.only(
+              top: 7,
+            ),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(24),
+                color: Colors.white38,
+              ),
+              height: 8,
+              width: 40,
+            ),
+          ),
+          const CustomTextField(
             hint: 'Title',
           ),
-          CustomTextField(
+          const CustomTextField(
             hint: 'content',
             maxLines: 5,
           ),
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
-          CustomButton(),
+          const CustomButton(),
         ],
       ),
     );

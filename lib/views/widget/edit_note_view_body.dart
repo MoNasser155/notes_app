@@ -1,14 +1,9 @@
-// ignore_for_file: file_names
-
 import 'package:flutter/material.dart';
 import 'package:noteapp/views/widget/custom_appbar.dart';
+import 'package:noteapp/views/widget/custom_text_field.dart';
 
-import 'Notes_List_View.dart';
-
-class NotesViewBody extends StatelessWidget {
-  const NotesViewBody({
-    super.key,
-  });
+class EditNoteViewBody extends StatelessWidget {
+  const EditNoteViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,14 +13,18 @@ class NotesViewBody extends StatelessWidget {
           padding: EdgeInsets.all(16.0),
           child: SafeArea(
             child: CustomAppbar(
-              appbartext: 'Notes',
-              icon: Icons.search,
+              appbartext: 'Edit Notes',
+              icon: Icons.check,
             ),
           ),
         ),
-        Expanded(
-          child: NoteListView(),
+        CustomTextField(
+          hint: 'Title',
         ),
+        CustomTextField(
+          hint: 'Content',
+          maxLines: 5,
+        )
       ],
     );
   }

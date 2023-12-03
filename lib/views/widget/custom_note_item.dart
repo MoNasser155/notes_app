@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:noteapp/views/edit_note_view.dart';
 
 class NoteItem extends StatelessWidget {
   const NoteItem({super.key});
@@ -11,57 +12,69 @@ class NoteItem extends StatelessWidget {
         right: 16,
         bottom: 8,
       ),
-      child: Container(
-        decoration: BoxDecoration(
-            color: Colors.orange, borderRadius: BorderRadius.circular(16)),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            ListTile(
-              trailing: IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.delete),
-                color: Colors.black,
-                iconSize: 28,
-              ),
-              title: const Padding(
-                padding: EdgeInsets.only(
-                  top: 24,
-                  bottom: 8,
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return const EditNoteView();
+              },
+            ),
+          );
+        },
+        child: Container(
+          decoration: BoxDecoration(
+              color: Colors.orange, borderRadius: BorderRadius.circular(16)),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              ListTile(
+                trailing: IconButton(
+                  onPressed: () {},
+                  icon: const Icon(Icons.delete),
+                  color: Colors.black,
+                  iconSize: 28,
                 ),
-                child: Text(
-                  'Flutter Tips',
-                  style: TextStyle(
-                    fontSize: 28,
-                    color: Colors.black,
+                title: const Padding(
+                  padding: EdgeInsets.only(
+                    top: 24,
+                    bottom: 8,
+                  ),
+                  child: Text(
+                    'Flutter Tips',
+                    style: TextStyle(
+                      fontSize: 28,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+                subtitle: Padding(
+                  padding: const EdgeInsets.only(bottom: 16),
+                  child: Text(
+                    'flutter tips with mohammed nasser and this is my app  ',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.black.withOpacity(0.5),
+                    ),
                   ),
                 ),
               ),
-              subtitle: Padding(
-                padding: const EdgeInsets.only(bottom: 16),
+              Padding(
+                padding: const EdgeInsets.only(
+                  bottom: 16,
+                  right: 24,
+                ),
                 child: Text(
-                  'flutter tips with mohammed nasser and this is my app  ',
+                  'May 14,2023',
                   style: TextStyle(
                     fontSize: 16,
                     color: Colors.black.withOpacity(0.5),
                   ),
                 ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                bottom: 16,
-                right: 24,
-              ),
-              child: Text(
-                'May 14,2023',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.black.withOpacity(0.5),
-                ),
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );
