@@ -25,19 +25,30 @@ class CustomTextField extends StatelessWidget {
         cursorColor: Colors.cyan,
         decoration: InputDecoration(
           hintText: hint,
+          hintStyle: const TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.w600,
+          ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
             borderSide: const BorderSide(
               color: Color.fromARGB(255, 0, 79, 143),
+              width: 2,
             ),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
-            borderSide: const BorderSide(color: Colors.cyan),
+            borderSide: const BorderSide(
+              color: Colors.cyan,
+              width: 2,
+            ),
           ),
           errorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
-            borderSide: const BorderSide(color: Colors.cyan),
+            borderSide: const BorderSide(
+              color: Colors.cyan,
+              width: 2,
+            ),
           ),
         ),
       ),
