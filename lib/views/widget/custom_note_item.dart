@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:noteapp/Models/note_model.dart';
 import 'package:noteapp/views/edit_note_view.dart';
 
 class NoteItem extends StatelessWidget {
-  const NoteItem({super.key});
-
+  const NoteItem({super.key, required this.note});
+  final NoteModel note;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -25,7 +26,9 @@ class NoteItem extends StatelessWidget {
         },
         child: Container(
           decoration: BoxDecoration(
-              color: Colors.orange, borderRadius: BorderRadius.circular(16)),
+            color: Colors.orange,
+            borderRadius: BorderRadius.circular(16),
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
@@ -36,14 +39,14 @@ class NoteItem extends StatelessWidget {
                   color: Colors.black,
                   iconSize: 28,
                 ),
-                title: const Padding(
-                  padding: EdgeInsets.only(
+                title: Padding(
+                  padding: const EdgeInsets.only(
                     top: 24,
                     bottom: 8,
                   ),
                   child: Text(
-                    'Flutter Tips',
-                    style: TextStyle(
+                    note.title,
+                    style: const TextStyle(
                       fontSize: 28,
                       color: Colors.black,
                     ),
@@ -52,7 +55,7 @@ class NoteItem extends StatelessWidget {
                 subtitle: Padding(
                   padding: const EdgeInsets.only(bottom: 16),
                   child: Text(
-                    'flutter tips with mohammed nasser and this is my app  ',
+                    note.subtitle,
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.black.withOpacity(0.5),
@@ -66,7 +69,7 @@ class NoteItem extends StatelessWidget {
                   right: 24,
                 ),
                 child: Text(
-                  'May 14,2023',
+                  note.data,
                   style: TextStyle(
                     fontSize: 16,
                     color: Colors.black.withOpacity(0.5),

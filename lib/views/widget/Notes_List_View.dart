@@ -14,13 +14,21 @@ class NoteListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<NotesCubit, NotesState>(
       builder: (context, state) {
-        List<NoteModel> notes =
-            BlocProvider.of<NotesCubit>(context).notes ?? [];
+        List<NoteModel> notes = BlocProvider.of<NotesCubit>(context).notes ??
+            [
+              NoteModel(
+                  title: 'title',
+                  subtitle: 'subtitle',
+                  data: 'data',
+                  color: Colors.blue.value)
+            ];
         return ListView.builder(
           itemCount: notes.length,
           padding: EdgeInsets.zero,
           itemBuilder: (BuildContext context, int index) {
-            return const NoteItem();
+            return NoteItem(
+              note: notes[index],
+            );
           },
         );
       },
