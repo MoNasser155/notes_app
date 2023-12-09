@@ -19,11 +19,9 @@ class NotesApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [BlocProvider(
-        create: (context) => NotesCubit(),
-        child: Container(),
-      )],
+    
+    return BlocProvider(
+      create: (context) => NotesCubit(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(

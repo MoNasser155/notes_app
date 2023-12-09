@@ -1,9 +1,9 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:noteapp/views/widget/Notes_view_body.dart';
-
+import '../cubits/notes_cubit/notes_cubit.dart';
 import 'widget/add_note_modal_sheet.dart';
 
 class Notesview extends StatelessWidget {
@@ -11,6 +11,7 @@ class Notesview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    BlocProvider.of<NotesCubit>(context).fetchAllNotes();
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
