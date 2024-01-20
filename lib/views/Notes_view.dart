@@ -14,6 +14,7 @@ class Notesview extends StatelessWidget {
     BlocProvider.of<NotesCubit>(context).fetchAllNotes();
     return Scaffold(
       floatingActionButton: FloatingActionButton(
+        backgroundColor: const Color.fromARGB(255, 0, 79, 143),
         onPressed: () {
           showModalBottomSheet(
               isScrollControlled: true,
