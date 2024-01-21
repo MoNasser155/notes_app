@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:noteapp/constants.dart';
 import 'package:noteapp/cubits/add_note_cubit/add_note_cubit.dart';
 
 class ColorListView extends StatefulWidget {
@@ -11,24 +12,7 @@ class ColorListView extends StatefulWidget {
 
 class _ColorListViewState extends State<ColorListView> {
   int currentColorIndex = 0;
-  List<Color> colors = const [
-    Color.fromARGB(255, 64, 224, 208),
-    Color.fromARGB(255, 0, 60, 100),
-    Color.fromARGB(255, 0, 158, 115),
-    Color.fromARGB(255, 255, 127, 80),
-    Color.fromARGB(255, 255, 218, 185),
-    Color.fromARGB(255, 255, 192, 203),
-    Color.fromARGB(255, 255, 165, 0),
-    Color.fromARGB(255, 148, 0, 211),
-    Color.fromARGB(255, 154, 205, 50),
-    Color.fromARGB(255, 255, 255, 255),
-    Color.fromARGB(255, 250, 240, 230),
-    Color.fromARGB(255, 245, 245, 220),
-    Color.fromARGB(255, 128, 128, 128),
-    Color.fromARGB(255, 255, 215, 0),
-    Color.fromARGB(255, 192, 192, 192),
-    Color.fromARGB(255, 184, 115, 51),
-  ];
+  
 
   @override
   Widget build(BuildContext context) {
@@ -39,16 +23,16 @@ class _ColorListViewState extends State<ColorListView> {
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
           physics: const BouncingScrollPhysics(),
-          itemCount: colors.length,
+          itemCount: kColors.length,
           itemBuilder: (BuildContext context, int index) {
             return GestureDetector(
               onTap: () {
                 currentColorIndex = index;
-                BlocProvider.of<AddNoteCubit>(context).color = colors[index];
+                BlocProvider.of<AddNoteCubit>(context).color = kColors[index];
                 setState(() {});
               },
               child: ColorPicker(
-                color: colors[index],
+                color: kColors[index],
                 selectedColor: currentColorIndex == index,
               ),
             );
