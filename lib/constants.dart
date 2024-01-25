@@ -17,4 +17,6 @@ List<Color> kColors = const [
     Color.fromARGB(255, 255, 215, 0),
     Color.fromARGB(255, 192, 192, 192),
     Color.fromARGB(255, 184, 115, 51),
+    Color.fromARGB(255, 92, 46, 3),
+    
   ];
