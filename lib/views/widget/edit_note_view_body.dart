@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:noteapp/Models/note_model.dart';
 import 'package:noteapp/cubits/notes_cubit/notes_cubit.dart';
-import 'package:noteapp/views/Notes_view.dart';
-import 'package:noteapp/views/widget/color_list_view.dart';
 import 'package:noteapp/views/widget/custom_appbar.dart';
 import 'package:noteapp/views/widget/custom_text_field.dart';
 import 'package:noteapp/views/widget/edit_note_colors_list_view.dart';
